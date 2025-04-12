@@ -20,9 +20,9 @@ A platformer game with persistent leaderboards and user statistics. Collect coin
 
 ## Database structure 
 CREATE TABLE IF NOT EXISTS "user" (  
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,  
-    "username" VARCHAR(150) NOT NULL UNIQUE,   
-    "password" VARCHAR(150) NOT NULL  
+    \t"id" INTEGER PRIMARY KEY AUTOINCREMENT,  
+    \t"username" VARCHAR(150) NOT NULL UNIQUE,   
+    \t"password" VARCHAR(150) NOT NULL  
 ); 
 
 CREATE TABLE IF NOT EXISTS "result" (  
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS "result" (
     FOREIGN KEY("user_id") REFERENCES "user"("id")   
 ); 
 
-##⚙️ Backend API
+## ⚙️ Backend API
 **Key Endpoints**
 - /submit_result	POST	->	Submit game results with validation
 - /check_game_status	GET	-> Chack is the game is running or not 
