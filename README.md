@@ -1,6 +1,7 @@
 # Coin Collector
 
 A platformer game with persistent leaderboards and user statistics. Collect coins, avoid monsters, and climb the ranks!
+
 ![image](https://github.com/user-attachments/assets/fa6f5f26-a8da-4521-a78c-6aec146aa507)
 
 ## 🌟 Features
