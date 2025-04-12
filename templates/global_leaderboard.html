@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}
+    Global Leaderboard - Coin Collector
+{% endblock %}
+
+{% block content %}
+    <div class="leaderboard-container">
+        <h1>🏆 Global Leaderboard</h1>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Player</th>
+                    <th>Coin</th>
+                    <th>Play Time</th>
+                    <th>Result</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for result in results %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ result.user.username }}</td>
+                        <td>{{ result.coins }}</td>
+                        <td>{{ result.play_time }}s</td>
+                        <td class="result-{{ result.result }}">
+                            {% if result.result == 'won' %}
+                                Victory
+                            {% elif result.result == 'lost' %}
+                                Defeat
+                            {% elif result.result == 'quit' %}
+                                Quit
+                            {% endif %}
+                        </td>
+                        <td>{{ result.time.strftime('%d/%m/%Y') }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
