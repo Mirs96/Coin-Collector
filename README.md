@@ -19,20 +19,20 @@ A platformer game with persistent leaderboards and user statistics. Collect coin
 - **Game Engine**: Pygame
 
 ## Database structure 
-CREATE TABLE IF NOT EXISTS "user" ( 
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT, 
-    "username" VARCHAR(150) NOT NULL UNIQUE, 
-    "password" VARCHAR(150) NOT NULL 
+CREATE TABLE IF NOT EXISTS "user" (  
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,  
+    "username" VARCHAR(150) NOT NULL UNIQUE,   
+    "password" VARCHAR(150) NOT NULL  
 ); 
 
-CREATE TABLE IF NOT EXISTS "result" ( 
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT, 
-    "user_id" INTEGER NOT NULL, 
-    "result" VARCHAR(20) NOT NULL, 
-    "coins" INTEGER NOT NULL, 
-    "time" DATETIME, 
-    "play_time" INTEGER, 
-    FOREIGN KEY("user_id") REFERENCES "user"("id") 
+CREATE TABLE IF NOT EXISTS "result" (  
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,  
+    "user_id" INTEGER NOT NULL,  
+    "result" VARCHAR(20) NOT NULL,  
+    "coins" INTEGER NOT NULL,  
+    "time" DATETIME,  
+    "play_time" INTEGER,  
+    FOREIGN KEY("user_id") REFERENCES "user"("id")   
 ); 
 
 ##⚙️ Backend API
@@ -50,10 +50,10 @@ CREATE TABLE IF NOT EXISTS "result" (
 
 ## 🎮 Gameplay 
 **Controls**:  
-← → Arrow keys: Move character  
-Spacebar: Jump 
-ESC: Quit game 
-F2: Restart game 
+- ← → Arrow keys: Move character  
+- Spacebar: Jump 
+- ESC: Quit game 
+- F2: Restart game 
 
 **Objectives**: 
 - Collect all 5 coins 
