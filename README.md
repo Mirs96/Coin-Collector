@@ -19,10 +19,10 @@ A platformer game with persistent leaderboards and user statistics. Collect coin
 - **Game Engine**: Pygame
 
 ## Database structure 
-CREATE TABLE IF NOT EXISTS "user" (  
-    \t"id" INTEGER PRIMARY KEY AUTOINCREMENT,  
-    \t"username" VARCHAR(150) NOT NULL UNIQUE,   
-    \t"password" VARCHAR(150) NOT NULL  
+`CREATE TABLE IF NOT EXISTS "user" (  
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT,  
+    "username" VARCHAR(150) NOT NULL UNIQUE,   
+    "password" VARCHAR(150) NOT NULL  
 ); 
 
 CREATE TABLE IF NOT EXISTS "result" (  
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS "result" (
     "time" DATETIME,  
     "play_time" INTEGER,  
     FOREIGN KEY("user_id") REFERENCES "user"("id")   
-); 
+); `
 
 ## ⚙️ Backend API
 **Key Endpoints**
