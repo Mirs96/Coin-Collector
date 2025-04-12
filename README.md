@@ -18,22 +18,22 @@ A platformer game with persistent leaderboards and user statistics. Collect coin
 - **Database**: SQLite
 - **Game Engine**: Pygame
 
-## Database structure
-CREATE TABLE IF NOT EXISTS "user" (
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "username" VARCHAR(150) NOT NULL UNIQUE,
-    "password" VARCHAR(150) NOT NULL
-);
+## Database structure 
+CREATE TABLE IF NOT EXISTS "user" ( 
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT, 
+    "username" VARCHAR(150) NOT NULL UNIQUE, 
+    "password" VARCHAR(150) NOT NULL 
+); 
 
-CREATE TABLE IF NOT EXISTS "result" (
-    "id" INTEGER PRIMARY KEY AUTOINCREMENT,
-    "user_id" INTEGER NOT NULL,
-    "result" VARCHAR(20) NOT NULL,
-    "coins" INTEGER NOT NULL,
-    "time" DATETIME,
-    "play_time" INTEGER,
-    FOREIGN KEY("user_id") REFERENCES "user"("id")
-);
+CREATE TABLE IF NOT EXISTS "result" ( 
+    "id" INTEGER PRIMARY KEY AUTOINCREMENT, 
+    "user_id" INTEGER NOT NULL, 
+    "result" VARCHAR(20) NOT NULL, 
+    "coins" INTEGER NOT NULL, 
+    "time" DATETIME, 
+    "play_time" INTEGER, 
+    FOREIGN KEY("user_id") REFERENCES "user"("id") 
+); 
 
 ##⚙️ Backend API
 **Key Endpoints**
@@ -49,21 +49,21 @@ CREATE TABLE IF NOT EXISTS "result" (
 - 🔑 Password hashing with werkzeug.security 
 
 ## 🎮 Gameplay 
-**Controls**: 
-← → Arrow keys: Move character 
+**Controls**:  
+← → Arrow keys: Move character  
 Spacebar: Jump 
 ESC: Quit game 
 F2: Restart game 
 
 **Objectives**: 
 - Collect all 5 coins 
-- Avoid moving monsters
-- Reach the door after collecting all coins 
+- Avoid moving monsters 
+- Reach the door after collecting all coins  
 - Compete for best time on the leaderboard 
 
 ## 📊 Leaderboard System 
 Results are ranked using a sorting algorithm: 
-- Game outcome priority: Won > Lost > Quit
-- For wins: Fastest completion time
-- For losses/quits: Highest coins collected
-- Secondary sort: Completion time
+- Game outcome priority: Won > Lost > Quit 
+- For wins: Fastest completion time 
+- For losses/quits: Highest coins collected 
+- Secondary sort: Completion time 
